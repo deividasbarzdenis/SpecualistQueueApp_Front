@@ -1,9 +1,10 @@
 import * as yup from "yup"
 import {Form, Formik} from "formik"
 import {useHistory} from "react-router";
-import {addUser} from "../../api/usersApi";
 import {Avatar, Button, Container, CssBaseline, Grid, Link, makeStyles, TextField, Typography} from "@material-ui/core";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import {signup} from "../../api/userApi";
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -69,7 +70,7 @@ const Signup = () => {
     const classes = useStyles();
     const handleOnSubmit = (formValues, formikHelpers) => {
         formikHelpers.setSubmitting(true);
-        addUser(formValues)
+        signup(formValues)
             .then(() => {
                 history.push("/home");
             })
