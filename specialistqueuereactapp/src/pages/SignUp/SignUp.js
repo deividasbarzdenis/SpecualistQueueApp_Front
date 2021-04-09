@@ -72,7 +72,7 @@ const Signup = () => {
         formikHelpers.setSubmitting(true);
         signup(formValues)
             .then(() => {
-                history.push("/home");
+                history.push("/");
             })
             .finally(() => {
                 formikHelpers.setSubmitting(false);

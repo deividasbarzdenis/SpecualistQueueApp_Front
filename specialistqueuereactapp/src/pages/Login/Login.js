@@ -59,7 +59,7 @@ const Login = () => {
 
                 const {from} = location.state || {
                     from: {
-                        pathname: '/home'
+                        pathname: '/'
                     }
                 }
                 history.push(from)
