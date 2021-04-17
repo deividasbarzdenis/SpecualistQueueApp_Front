@@ -1,4 +1,15 @@
-import {AppBar, Button, makeStyles, Menu, MenuItem, Toolbar, useMediaQuery, useTheme} from "@material-ui/core";
+import {
+    AppBar, Avatar,
+    Button,
+    Icon,
+    makeStyles,
+    Menu,
+    MenuItem,
+    SvgIcon,
+    Toolbar,
+    useMediaQuery,
+    useTheme
+} from "@material-ui/core";
 import IconButton from "@material-ui/core/IconButton";
 import SortIcon from "@material-ui/icons/Sort";
 import {useState} from "react";
@@ -6,6 +17,8 @@ import useUser from "../../hooks/useUser";
 import {NavLink} from "react-router-dom";
 import {removeJwt, removeUserData} from "../../store/slices/userSlice";
 import {useDispatch} from "react-redux";
+import AllInclusiveOutlinedIcon from '@material-ui/icons/AllInclusiveOutlined';
+import queue from '../../assets/SimplQnewlogo.png'
 
 const menuItems = [
     {
@@ -84,7 +97,15 @@ const useStyles = makeStyles((theme) => ({
     },
     dropMenuText: {
         color: "#795548",
+    },
+    avatar: {
+        backgroundColor: 'rgba(158, 216, 235, 1)',
+        },
+    avatar1: {
+        background: `transparent url${queue} 0% 0% no-repeat padding-box`,
+        opacity: 1,
     }
+
 }))
 
 const Header = () => {
@@ -112,6 +133,12 @@ const Header = () => {
         <div className={classes.root} id='header'>
             <AppBar className={classes.appBar} elevation={0}>
                 <Toolbar className={classes.appBarWrapper}>
+                    <Icon className={classes.avatar1}>
+                    </Icon>
+                    <Avatar className={classes.avatar}>
+                        <AllInclusiveOutlinedIcon/>
+                    </Avatar>
+
                     <NavLink exact to="/" className={classes.appBarTitle} >
                         <h1 className={classes.appBarTitle} >Specialist
                             <span className={classes.colorTitle}>Queue</span>

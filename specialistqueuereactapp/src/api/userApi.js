@@ -1,5 +1,7 @@
 import HTTP from './'
 
+export const fetchSpecialists = () => HTTP.get('/specialists');
+
 export const fetchUsers = () => HTTP.get('/users');
 
 export const signup = (user) => HTTP.post('/signup', user);
