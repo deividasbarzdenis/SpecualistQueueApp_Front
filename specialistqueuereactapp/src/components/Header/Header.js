@@ -22,14 +22,6 @@ import queue from '../../assets/SimplQnewlogo.png'
 
 const menuItems = [
     {
-        title: "Specialists",
-        pageUrl: "/specialists"
-    },
-    {
-        title: "Register",
-        pageUrl: "/register"
-    },
-    {
         title: "Waiting List",
         pageUrl: "/waitinglist"
     },
@@ -73,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
         color: "red"
     },
     menuButton: {
+        backgroundColor: 'rgba(158, 216, 235, 1)',
         '&:hover': {
             backgroundColor: 'rgba(215, 138, 248,  0.75)',
             color: '#795548',
@@ -85,8 +78,9 @@ const useStyles = makeStyles((theme) => ({
     },
     btColor: {
         fontFamily: 'Nunito',
-        color: "rgba(158, 216, 235, 1)",
-        fontSize: '0.95rem',
+        color: "#3A3768",
+        fontWeight: "regular",
+        fontSize: '0.85rem',
         '&:hover': {
             backgroundColor: 'rgba(215, 138, 248,  0.75)',
             color: '#795548',
