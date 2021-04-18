@@ -22,10 +22,12 @@ import queue from '../../assets/SimplQnewlogo.png'
 
 const menuItems = [
     {
+        index: 0,
         title: "Waiting List",
         pageUrl: "/waitinglist"
     },
     {
+        index: 1,
         title: "About",
         pageUrl: "/about"
     },
@@ -163,7 +165,7 @@ const Header = () => {
                                 open={open}
                                 onClose={() => setAnchorEl(null)}
                             >
-                                {menuItems.map(({title, pageUrl}, index) => {
+                                {menuItems.map(({title, pageUrl, index}) => {
                                     // const {title, pageUrl} = item;
                                     return (
                                         <MenuItem className={classes.dropMenu} >
@@ -172,7 +174,8 @@ const Header = () => {
                                                 className={classes.dropMenuText}
                                                 to={pageUrl}
                                                 onClick={() => handleMenuClick()}>
-                                                {title}</NavLink>
+                                                {title}
+                                            </NavLink>
                                         </MenuItem>
                                     )
                                 })}
@@ -185,7 +188,8 @@ const Header = () => {
                                                     to="/home"
                                                     component={Button}
                                                     onClick={logout}>
-                                                    Logout</NavLink>
+                                                    Logout
+                                                </NavLink>
                                             </MenuItem>
                                         </>
                                     ) : (
@@ -204,7 +208,7 @@ const Header = () => {
                     ) : (
                         <>
                             <div className={classes.headerButtons}>
-                                {menuItems.map(({title, pageUrl}, index) => {
+                                {menuItems.map(({title, pageUrl, index}) => {
                                     return (
                                         <>
                                             <Button

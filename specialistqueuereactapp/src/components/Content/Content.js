@@ -3,7 +3,8 @@ import {Route, Switch} from "react-router-dom";
 import Login from "../../pages/Login/Login";
 import SignUp from "../../pages/SignUp/SignUp";
 import Home from "../../pages/Home/Home";
-import ClientForm from "../Client/ClientForm";
+import ClientForm from "../../pages/Client/ClientForm";
+import QueueMonitoring from "../../pages/QueueMonitoring/QueueMonitoring";
 
 const Content = () => {
     return (
@@ -15,11 +16,14 @@ const Content = () => {
                 <Route path="/login">
                     <Login/>
                 </Route>
-                <Route path="/signup">
+                <Route path="/signup">{/*private route*/}
                     <SignUp/>
                 </Route>
                 <Route path="/clientform">
                     <ClientForm/>
+                </Route>
+                <Route path="/waitinglist">
+                    <QueueMonitoring/>
                 </Route>
             </Switch>
         </Container>
