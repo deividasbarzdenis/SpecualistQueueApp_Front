@@ -68,3 +68,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### About Specialist Queue Application
+
+This a web application is for register to specialist queue. Easy to register, just push want button and enter name, lastname, choose a specialist, and you need to wait your queue. 
+In client private app window are queue number, token number, time left and can leave a queue. 
+Specialist have to log in to see clients in queue. In a specialist private window are clients list, can delete client, can add client
+, pause queue. A new specialist can add admin.
+
+#### Screenshots
+Home page:
+![img.png](img.png)
+
+Register to specialist page:
+![img_1.png](img_1.png)
+
+Waiting list page:
+![img_2.png](img_2.png)
+
+Login page:
+![img_3.png](img_3.png)
+
+#### In Production
+1. Private client window component,
+2. Private Specialist window component,
+3. Global state for client state,
+4. Store user and client state to browser memory,
+5. Improve Waiting list component,
+6. About component,
+7. Private routing according to roles.
