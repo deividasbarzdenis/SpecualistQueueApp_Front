@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^12.8.3",
     "axios": "^0.21.1",
     "formik": "^2.2.6",
+    "lodash": "^4.17.21",
     "material-ui-image": "^3.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -51,5 +52,5 @@
     "material-ui-formik-components": "^0.7.3",
     "redux-devtools": "^3.7.0"
   },
-  "proxy": "http://localhost:8080"
+  "proxy": "http://localhost:8081"
 }

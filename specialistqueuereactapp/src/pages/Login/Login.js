@@ -10,8 +10,7 @@ import {useHistory, useLocation} from "react-router";
 import {login} from "../../api/loginApi";
 
 const useStyles = makeStyles((theme) => ({
-    text: {
-    },
+    text: {},
     paper: {
         marginTop: theme.spacing(8),
         display: 'flex',
@@ -56,7 +55,6 @@ const Login = () => {
             .then(({data, headers: {authorization}}) => {
                 dispatch(setUserData(data))
                 dispatch(setJwt(authorization))
-
                 const {from} = location.state || {
                     from: {
                         pathname: '/'

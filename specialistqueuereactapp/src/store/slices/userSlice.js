@@ -1,5 +1,6 @@
-import {createSlice} from "@reduxjs/toolkit";
-import {loadFromStorage, saveToStorage} from "../../utils/localStorage";
+import {createSlice, createStore} from "@reduxjs/toolkit";
+import {loadState, saveState} from "../../utils/localStorage";
+import _ from "lodash";
 
 const initialState = {
     userData: null,
@@ -11,10 +12,10 @@ const userSlice = createSlice({
     initialState,
     //pasirasome veiksmus ka norime daryti su slice, reducers ..po : gaunasi rename objekto
     reducers: {
-        setUserData(state, { payload: user }) {
+        setUserData(state, {payload: user}) {
             state.userData = user
         },
-        setJwt(state, { payload: jwt }) {
+        setJwt(state, {payload: jwt}) {
             state.jwt = jwt
         },
         removeUserData(state) {
@@ -22,18 +23,18 @@ const userSlice = createSlice({
         },
         removeJwt(state) {
             state.jwt = null
-        }
+        },
     },
-
 })
-
-export const saveUserToStorage = (store) => {
-    store.subscribe(() => {
-        const userState = store.getState().user;
-        saveToStorage('user', userState);
-    })
+export const subscribeToUserChanges = (state) => {
+    state.subscribe(_.throttle(() => {
+        const currentUser = state.getState().user
+        saveState('user', currentUser)
+    }, 1000))
 }
-export const loadUserFromStorage = () => loadFromStorage('user');
+
+export const loadUserFromStorage = () => loadState('user');
+
 
 export default userSlice.reducer
-export const { setUserData, setJwt, removeUserData, removeJwt } = userSlice.actions
+export const {setUserData, setJwt, removeUserData, removeJwt} = userSlice.actions
